@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <title>Coverage for challenge/model.py: 89%</title>
+    <title>Coverage for challenge/model.py: 97%</title>
     <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="jquery.min.js"></script>
@@ -18,13 +18,13 @@
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>challenge/model.py</b> :
-            <span class="pc_cov">89%</span>
+            <span class="pc_cov">97%</span>
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
             74 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">66 run</button>
-            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">8 missing</button>
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">72 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">2 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
     </div>
@@ -194,12 +194,12 @@
     <p id="t140" class="pln"><span class="n"><a href="#t140">140</a></span><span class="t"><span class="str">            target (pd.DataFrame): target.</span>&nbsp;</span><span class="r"></span></p>
     <p id="t141" class="pln"><span class="n"><a href="#t141">141</a></span><span class="t"><span class="str">        """</span>&nbsp;</span><span class="r"></span></p>
     <p id="t142" class="pln"><span class="n"><a href="#t142">142</a></span><span class="t">        <span class="com"># X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t143" class="mis show_mis"><span class="n"><a href="#t143">143</a></span><span class="t">        <span class="nam">X_train</span> <span class="op">=</span> <span class="nam">features</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t144" class="mis show_mis"><span class="n"><a href="#t144">144</a></span><span class="t">        <span class="nam">y_train</span> <span class="op">=</span> <span class="nam">target</span><span class="op">.</span><span class="nam">squeeze</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t145" class="mis show_mis"><span class="n"><a href="#t145">145</a></span><span class="t">        <span class="nam">n_y_0</span> <span class="op">=</span> <span class="nam">len</span><span class="op">(</span><span class="nam">y_train</span><span class="op">[</span><span class="nam">y_train</span> <span class="op">==</span> <span class="num">0</span><span class="op">]</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t146" class="mis show_mis"><span class="n"><a href="#t146">146</a></span><span class="t">        <span class="nam">n_y_1</span> <span class="op">=</span> <span class="nam">len</span><span class="op">(</span><span class="nam">y_train</span><span class="op">[</span><span class="nam">y_train</span> <span class="op">==</span> <span class="num">1</span><span class="op">]</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t147" class="mis show_mis"><span class="n"><a href="#t147">147</a></span><span class="t">        <span class="nam">scale</span> <span class="op">=</span> <span class="nam">n_y_0</span><span class="op">/</span><span class="nam">n_y_1</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t148" class="mis show_mis"><span class="n"><a href="#t148">148</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">_model</span><span class="op">.</span><span class="nam">scale_pos_weight</span> <span class="op">=</span> <span class="nam">scale</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t143" class="run"><span class="n"><a href="#t143">143</a></span><span class="t">        <span class="nam">X_train</span> <span class="op">=</span> <span class="nam">features</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t144" class="run"><span class="n"><a href="#t144">144</a></span><span class="t">        <span class="nam">y_train</span> <span class="op">=</span> <span class="nam">target</span><span class="op">.</span><span class="nam">squeeze</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t145" class="run"><span class="n"><a href="#t145">145</a></span><span class="t">        <span class="nam">n_y_0</span> <span class="op">=</span> <span class="nam">len</span><span class="op">(</span><span class="nam">y_train</span><span class="op">[</span><span class="nam">y_train</span> <span class="op">==</span> <span class="num">0</span><span class="op">]</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t146" class="run"><span class="n"><a href="#t146">146</a></span><span class="t">        <span class="nam">n_y_1</span> <span class="op">=</span> <span class="nam">len</span><span class="op">(</span><span class="nam">y_train</span><span class="op">[</span><span class="nam">y_train</span> <span class="op">==</span> <span class="num">1</span><span class="op">]</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t147" class="run"><span class="n"><a href="#t147">147</a></span><span class="t">        <span class="nam">scale</span> <span class="op">=</span> <span class="nam">n_y_0</span><span class="op">/</span><span class="nam">n_y_1</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t148" class="run"><span class="n"><a href="#t148">148</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">_model</span><span class="op">.</span><span class="nam">scale_pos_weight</span> <span class="op">=</span> <span class="nam">scale</span>&nbsp;</span><span class="r"></span></p>
     <p id="t149" class="pln"><span class="n"><a href="#t149">149</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t150" class="run"><span class="n"><a href="#t150">150</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">_model</span><span class="op">.</span><span class="nam">fit</span><span class="op">(</span><span class="nam">X_train</span><span class="op">,</span> <span class="nam">y_train</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t151" class="run"><span class="n"><a href="#t151">151</a></span><span class="t">        <span class="nam">self</span><span class="op">.</span><span class="nam">_model_fitted</span> <span class="op">=</span> <span class="key">True</span>&nbsp;</span><span class="r"></span></p>
@@ -233,7 +233,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.5</a>,
-            created at 2023-10-24 16:50 -0500
+            created at 2023-10-24 16:55 -0500
         </p>
     </div>
 </div>
