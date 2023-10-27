@@ -23,8 +23,6 @@ top_10_features = [
     "OPERA_Copa Air"
 ]
 
-# data = pd.read_csv('./data/data.csv')
-
 class DelayModel:
 
     def __init__(
@@ -122,10 +120,6 @@ class DelayModel:
             return features, target
         else:
             return features
-        # features = features[top_10_features]
-        # target = data[[target_column]]
-
-        # return features, target
 
     def fit(
         self,
@@ -139,7 +133,7 @@ class DelayModel:
             features (pd.DataFrame): preprocessed data.
             target (pd.DataFrame): target.
         """
-        # X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
+
         X_train = features
         y_train = target.squeeze()
         n_y_0 = len(y_train[y_train == 0])
@@ -149,9 +143,6 @@ class DelayModel:
 
         self._model.fit(X_train, y_train)
         self._model_fitted = True
-        # joblib.dump(self._model, './model.pkl')
-
-        # return
 
     def predict(
         self,
