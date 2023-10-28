@@ -8,7 +8,6 @@ import xgboost as xgb
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 
-import joblib
 
 top_10_features = [
     "OPERA_Latin American Wings", 
@@ -99,12 +98,14 @@ class DelayModel:
             or
             pd.DataFrame: features.
         """
-        data['period_day'] = data['Fecha-I'].apply(self.get_period_day)
-        data['high_season'] = data['Fecha-I'].apply(self.is_high_season)        
-        data['min_diff'] = data.apply(self.get_min_diff, axis = 1)
+        print(data)
+        if 'Fecha-O' in data.columns or 'Fecha-I' in data.columns:
+            data['period_day'] = data['Fecha-I'].apply(self.get_period_day)
+            data['high_season'] = data['Fecha-I'].apply(self.is_high_season)        
+            data['min_diff'] = data.apply(self.get_min_diff, axis = 1)
 
-        threshold_in_minutes = 15
-        data['delay'] = np.where(data['min_diff'] > threshold_in_minutes, 1, 0)
+            threshold_in_minutes = 15
+            data['delay'] = np.where(data['min_diff'] > threshold_in_minutes, 1, 0)
 
 
         features = pd.concat([
@@ -113,6 +114,10 @@ class DelayModel:
             pd.get_dummies(data['MES'], prefix = 'MES')],
             axis = 1
         )
+        for feature in top_10_features:
+            if feature not in features:
+                features[feature] = 0
+
         features = features[top_10_features]
 
         if target_column:
@@ -157,11 +162,9 @@ class DelayModel:
         Returns:
             (List[int]): predicted targets.
         """
-        # trained_model = joblib.load('model.pkl')
         if self._model is None or not self._model_fitted:
             return [0] * len(features)
-        # predictions = trained_model.predict(features)
+
         predictions = self._model.predict(features)
 
         return predictions.tolist()
-        # return predictions.tolist()
