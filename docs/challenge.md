@@ -44,7 +44,45 @@ In this project, we have chosen to harness the power and versatility of Google C
 
 5. **Flexible Payment Options**: With pay-as-you-go options, GCP accommodates our budget and avoids unnecessary costs.
 
+## FastAPI Integration
 
+This project leverages the power of FastAPI, a modern, fast (high-performance) web framework for building APIs with Python 3.7+ based on standard Python type hints. FastAPI provides an easy and efficient way to create RESTful APIs with automatic validation, documentation, and interactive capabilities.
+
+**Key Features**:
+
+- **High Performance**: FastAPI is designed for speed and can handle high loads with ease.
+
+- **Interactive Docs**: Built-in interactive documentation and automatic OpenAPI and JSON Schema generation make API development a breeze.
+
+- **Type Hints**: Utilize Python's type hints to define data models, making your API robust and self-documenting.
+
+- **Asynchronous Support**: FastAPI supports asynchronous programming, allowing for efficient handling of concurrent requests.
+
+- **Authentication and Security**: Easily implement authentication and security measures to protect your API.
+
+FastAPI simplifies API development, making it the ideal choice for this project. Get started with FastAPI by following our setup instructions in the README.
+
+## FastAPI Integration
+
+This project leverages the power of FastAPI, a modern, fast (high-performance) web framework for building APIs with Python 3.7+ based on standard Python type hints. FastAPI provides an easy and efficient way to create RESTful APIs with automatic validation, documentation, and interactive capabilities.
+
+**Key Features**:
+
+- **High Performance**: FastAPI is designed for speed and can handle high loads with ease.
+
+- **Interactive Docs**: Built-in interactive documentation and automatic OpenAPI and JSON Schema generation make API development a breeze.
+
+- **Type Hints**: Utilize Python's type hints to define data models, making your API robust and self-documenting.
+
+- **Asynchronous Support**: FastAPI supports asynchronous programming, allowing for efficient handling of concurrent requests.
+
+- **Authentication and Security**: Easily implement authentication and security measures to protect your API.
+
+FastAPI simplifies API development, making it the ideal choice for this project. Get started with FastAPI by following our setup instructions in the README.
+
+
+
+## DOCKER
 
 ## Build the Docker Image
 
@@ -58,9 +96,3 @@ docker build -t myimage .
 docker run -d --name mycontainer -p 80:80 myimage
 
 ```
-
-Interactive API docs
-http://127.0.0.1/docs
-
-
-Installation httpx
