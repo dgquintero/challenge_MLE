@@ -1,0 +1,7 @@
+runtime: python
+env: flex
+
+entrypoint: gunicorn -w 1 -k uvicorn.workers.UvicornWorker challenge.api:app
+
+runtime_config:
+  python_version: 3.7
